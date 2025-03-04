@@ -11,6 +11,7 @@ import JobApply from "../pages/JobApply/JobApply";
 import MyApplication from "../pages/MyApplication/MyApplication";
 import AddJobs from "../pages/AddJobs/AddJobs";
 import MyPostJobs from "../pages/MyPostJobs/MyPostJobs";
+import ViewApplication from "../pages/viewApplication/viewApplication";
 
 
 
@@ -47,6 +48,11 @@ import MyPostJobs from "../pages/MyPostJobs/MyPostJobs";
         {
           path:"myPostJobs",
           element: <PrivateRouter><MyPostJobs></MyPostJobs></PrivateRouter>
+        },
+        {
+          path:"viewApplication/:job_id",
+          element: <PrivateRouter><ViewApplication></ViewApplication> </PrivateRouter>,
+          loader: ({params})=> fetch(`http://localhost:5000/job-application/jobs/${params.job_id }`)
         },
         {
             path:"/login",
