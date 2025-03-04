@@ -29,7 +29,7 @@ const Banner = () => {
       return [80, 150, 80];  // Medium vertical range
     } else {
       // Large screen (desktop)
-      return [150, 200, 150];  // Larger vertical range
+      return [80, 150, 80];  // Larger vertical range
     }
   };
 
@@ -42,7 +42,7 @@ const Banner = () => {
       return [80, 150, 80];  // Medium horizontal range
     } else {
       // Large screen (desktop)
-      return [150, 200, 150];  // Larger horizontal range
+      return [100, 200, 100];  // Larger horizontal range
     }
   };
 

@@ -41,6 +41,18 @@ const Navbar = () => {
                   ? ''
                   : ''
               }>MyApplication</NavLink></li>
+        <li className='mr-2  font-bold '><NavLink to={"/AddJobs"}   
+              className={({ isActive }) =>
+                isActive
+                  ? ''
+                  : ''
+              }>AddJobs</NavLink></li>
+        <li className='mr-2  font-bold '><NavLink to={"/myPostJobs"}   
+              className={({ isActive }) =>
+                isActive
+                  ? ''
+                  : ''
+              }>MyPostJobs</NavLink></li>
        
 
 
@@ -48,7 +60,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-cyan-100">
+        <div className="navbar sticky top-0 z-50 backdrop-blur-md bg-cyan-100">
         <div className="navbar-start">
           <div  className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

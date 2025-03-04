@@ -9,6 +9,8 @@ import JobDetails from "../pages/Details/jobDetails";
 import PrivateRouter from "./PrivateRouter";
 import JobApply from "../pages/JobApply/JobApply";
 import MyApplication from "../pages/MyApplication/MyApplication";
+import AddJobs from "../pages/AddJobs/AddJobs";
+import MyPostJobs from "../pages/MyPostJobs/MyPostJobs";
 
 
 
@@ -37,6 +39,14 @@ import MyApplication from "../pages/MyApplication/MyApplication";
         {
           path:"/myApplication",
           element:<PrivateRouter><MyApplication></MyApplication></PrivateRouter>
+        },
+        {
+          path:"AddJobs",
+          element: <PrivateRouter><AddJobs></AddJobs></PrivateRouter>
+        },
+        {
+          path:"myPostJobs",
+          element: <PrivateRouter><MyPostJobs></MyPostJobs></PrivateRouter>
         },
         {
             path:"/login",

@@ -69,8 +69,7 @@ const MyApplication = () => {
      
         <th>Name</th>
         <th>Job</th>
-        <th>Favorite Color</th>
-        <th></th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -98,7 +97,7 @@ const MyApplication = () => {
                   <br />
                   <span className="badge badge-ghost badge-sm">{job.jobType}</span>
                 </td>
-                <td>Purple</td>
+               
                 <th>
                   <button onClick={()=>handleDeleteJobApplication(job._id)} className="btn btn-ghost btn-xs">Delete</button>
                 </th>
