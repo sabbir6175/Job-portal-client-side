@@ -49,7 +49,7 @@ const Banner = () => {
   return (
     <div style={{
       backgroundImage:   "url(https://i.ibb.co.com/hZ1TC20/pexels-fwstudio-33348-129731.jpg)",
-    }} className="hero bg-base-200 min-h-screen">
+    }} className="hero bg-base-200  min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse justify-center items-center">
         <div className='flex-1 -mt-40'>
           {/* Team1 Image Animation */}

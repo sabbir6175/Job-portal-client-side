@@ -21,7 +21,7 @@ const AddJobs = () => {
         newJob.responsibilities = newJob.responsibilities.split('\n')
         console.log(newJob);
 
-        axios.post('http://localhost:5000/jobs', newJob)
+        axios.post('https://job-portal-project-server.vercel.app/jobs', newJob)
             .then(result => {
                 console.log(result.data)
                 if (result.data.insertedId) {
@@ -38,9 +38,9 @@ const AddJobs = () => {
     }
 
     return (
-        <div>
+        <div className=' p-10 rounded-lg '>
             <h2 className="text-3xl md:text-4xl text-center my-10 font-bold">Post a new Job</h2>
-            <form onSubmit={handleAddJob} className="card-body">
+            <form onSubmit={handleAddJob} className="card-body shadow-success shadow-2xl">
                 {/* Job title */}
                 <div className="form-control">
                     <label className="label">
@@ -159,7 +159,7 @@ const AddJobs = () => {
                 </div>
                 {/* submit button */}
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary">Submit</button>
+                    <button className="btn bg-green-300">Submit</button>
                 </div>
             </form>
         </div>

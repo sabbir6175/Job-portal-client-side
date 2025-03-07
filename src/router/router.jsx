@@ -12,6 +12,7 @@ import MyApplication from "../pages/MyApplication/MyApplication";
 import AddJobs from "../pages/AddJobs/AddJobs";
 import MyPostJobs from "../pages/MyPostJobs/MyPostJobs";
 import ViewApplication from "../pages/viewApplication/viewApplication";
+import Jobs from "../pages/Jobs/Jobs";
 
 
 
@@ -29,9 +30,13 @@ import ViewApplication from "../pages/viewApplication/viewApplication";
             element: <Home></Home>
         },
         {
+          path: 'jobs',
+          element: <Jobs></Jobs>
+        },
+        {
             path: '/job/:id',
             element:<PrivateRouter><JobDetails></JobDetails></PrivateRouter>,
-            loader: ({params})=> fetch(`http://localhost:5000/Jobs/${params.id}`)
+            loader: ({params})=> fetch(`https://job-portal-project-server.vercel.app/Jobs/${params.id}`)
         },
         {
           path:"/JobApply/:id",
@@ -52,7 +57,7 @@ import ViewApplication from "../pages/viewApplication/viewApplication";
         {
           path:"viewApplication/:job_id",
           element: <PrivateRouter><ViewApplication></ViewApplication> </PrivateRouter>,
-          loader: ({params})=> fetch(`http://localhost:5000/job-application/jobs/${params.job_id }`)
+          loader: ({params})=> fetch(`https://job-portal-project-server.vercel.app/job-application/jobs/${params.job_id }`)
         },
         {
             path:"/login",

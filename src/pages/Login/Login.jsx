@@ -4,6 +4,7 @@ import animationLottieData from "../../assets/animation/lottie.json";
 import AuthContext from "../../context/Authcontext/AuthContext";
 import SocialLogin from "../shared/SocialLogin";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 const Login = () => {
@@ -25,6 +26,11 @@ const Login = () => {
         signInUser(email, password)
           .then(result => {
             console.log(result.user)
+            const user = {email : result.user.email}
+            axios.post('https://job-portal-project-server.vercel.app/jwt', user, {withCredentials: true})
+            .then(res=>{
+              console.log("login token",res.data)
+            })
             navigate(from)
           
           })

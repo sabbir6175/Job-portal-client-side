@@ -5,14 +5,14 @@ const HotJob = () => {
     const [jobs , setJobs]= useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/Jobs')
+        fetch('https://job-portal-project-server.vercel.app/Jobs')
             .then(res => res.json())
             .then(data => setJobs(data))
     },[])
 
     return (
-        <div >
-            <h1 className='text-center text-5xl py-32'>All job show this browser</h1>
+        <div  className='px-10'>
+            <h1 className='text-center text-3xl md:text-4xl lg:text-5xl font-bold py-20 uppercase'>All job</h1>
 
             <div className='grid px-3 pb-10 gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4'>
                 {

@@ -8,7 +8,7 @@ const MyPostJobs = () => {
   const { user } = useAuth();
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/Jobs?email=${user.email}`)
+      .get(`https://job-portal-project-server.vercel.app/Jobs?email=${user.email}`,{withCredentials: true})
       .then((result) => {
         console.log(result.data);
         setJobs(result.data);
@@ -16,7 +16,7 @@ const MyPostJobs = () => {
   }, []);
   return (
     <div className="my-10">
-      <h1 className="text-center text-3xl mb-10"> Welcome My Posted job: {jobs.length}</h1>
+      <h1 className="text-center text-3xl mb-10">My Posted job: {jobs.length}</h1>
 
       <div className="overflow-x-auto">
         <table className="table">

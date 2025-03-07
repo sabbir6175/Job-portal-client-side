@@ -2,15 +2,17 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const MyApplication = () => {
   const { user } = useAuth();
   const [jobs, setJobs] = useState([]);
+  const AxiosSecure = useAxiosSecure()
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/job-application?email=${user.email}`)
+    AxiosSecure
+      .get(`/job-application?email=${user.email}`)
       .then((result) => {
-        console.log(result.data);
+        // console.log(result.data);
         setJobs(result.data);
       });
   }, [user.email]);
@@ -28,7 +30,7 @@ const MyApplication = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // If the user confirms, then send the delete request
-        axios.delete(`http://localhost:5000/job-application/${id}`)
+        axios.delete(`https://job-portal-project-server.vercel.app/job-application/${id}`)
           .then(response => {
             if (response.data.deletedCount > 0) {
               Swal.fire({

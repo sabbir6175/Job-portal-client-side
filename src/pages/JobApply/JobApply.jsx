@@ -26,7 +26,7 @@ const JobApply = () => {
             Github,
             Resume
         }
-        axios.post('http://localhost:5000/job-applications', jobApplication)
+        axios.post('https://job-portal-project-server.vercel.app/job-applications', jobApplication)
         .then(result => {
             console.log(result.data);
             // Assuming 'acknowledged' is part of the response data
